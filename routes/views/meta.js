@@ -75,6 +75,6 @@ exports = module.exports = function(req, res) {
 	});
 	
 	// Render the view
-	view.render('site/blog');
+	view.render('site/meta');
 	
 }
