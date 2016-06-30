@@ -75,6 +75,6 @@ exports = module.exports = function(req, res) {
 	});
 	
 	// Render the view
-	view.render('site/meta');
+	view.render('site/overwatch');
 	
 }

@@ -2,7 +2,7 @@ extends ../../layouts/default
 
 include ../../mixins/post
 
-block intro
+//block intro
 	.page-intro: .container
 		h1.page-title=data.category ? data.category.name : 'Overwatchly'
 		p.lead
@@ -29,6 +29,6 @@ block content
 					if data.categories.length
 						h5.text-muted Filter by tag
 						ul.list-unstyled.tags-list
-							li: a(href='/meta', class=!data.categories ? 'active' : false) All
+							li: a(href='/overwatch', class=!data.categories ? 'active' : false) All
 							each tag in data.categories
-								li: a(href='/meta/' + tag.key, class=data.category && data.category.id == tag.id ? 'active' : false).list-group-item= tag.name
+								li: a(href='/overwatch/' + tag.key, class=data.category && data.category.id == tag.id ? 'active' : false).list-group-item= tag.name
