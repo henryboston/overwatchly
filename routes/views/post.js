@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 				if (post.state == 'published' || (req.user && req.user.isAdmin) || (req.user && post.author && (req.user.id == post.author.id))) {
 					locals.post = post;
 					locals.post.populateRelated('comments[author]', next);
-					locals.page.title = post.title + ' - Blog - SydJS';
+					locals.page.title = post.title + ' - Overwatchly';
 				} else {
 					return res.notfound('Post not found');
 				}
@@ -66,7 +66,7 @@ exports = module.exports = function(req, res) {
 				locals.validationErrors = err.errors;
 			} else {
 				req.flash('success', 'Your comment has been added successfully.');
-				return res.redirect('/blog/post/' + locals.post.slug);
+				return res.redirect('/overwatch/post/' + locals.post.slug);
 			}
 			next();
 		});

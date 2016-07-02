@@ -4,14 +4,14 @@ include ../../mixins/meetup
 block intro
 	.container-sm
 		.page-intro
-			h1.page-title Meetups
-			p.lead We usually meet up the 3rd Wednesday of every month. We hope to see you at 
-				if !user
+			h1.page-title Overwatch eSports Tournaments
+			p.lead We have compiled a list of all the major Overwatch Tournaments and eSports events below
+				//if !user
 					a(href='/join').js-auth-trigger our&nbsp;next&nbsp;meetup
-				else
+				//else
 					| our next meetup
-				| . Stay in the loop - 
-				a(href='http://twitter.com/sydjs', target='_blank') follow us on twitter
+				//| . Stay in the loop - 
+				//a(href='http://twitter.com/sydjs', target='_blank') follow us on twitter
 
 		if upcomingMeetup
 			+meetup(upcomingMeetup)
