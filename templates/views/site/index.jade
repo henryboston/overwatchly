@@ -25,10 +25,10 @@ block intro
 					p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
 					p.byline #{meetup.place} &#8212; 
 						a(href='http://maps.google.com.au/?daddr=' + (meetup.map || meetup.place), target='_blank') Directions
-				if meetup.state === 'active'
+				//if meetup.state === 'active'
 					#react-hero-button
 			//- Details
-			section.hero-details: .container
+			//section.hero-details: .container
 				.row: .col-sm-10.col-sm-offset-1: .row
 					
 					//- Description
@@ -44,7 +44,7 @@ block intro
 								ul.list-unstyled.talks-list
 									each talk in meetup.talks
 										li.talk.row
-											.col-xs-3
+											//.col-xs-3
 												.talk__speakers
 													if talk.who.length
 														each speaker, i in talk.who
@@ -68,13 +68,35 @@ block intro
 																=speaker.name.full
 													.summary!= talk.description
 				//- Attending
-				section.attending
+				//section.attending
 					#react-attending
 
 //- BODY
 block content
 	.page-content
-		
+		.row
+			div(class= data.categories.length || !data.posts.length ? 'col-md-10' : 'col-md-10 col-md-offset-1')
+				if filters.category && !data.category
+					h3 Invalid Category.
+				else
+					if data.posts.length
+						.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+							each post in data.posts
+								+post(post)
+					else
+						if data.category
+							h3.text-muted No posts in the category #{data.category.name}.
+						else
+							h3.text-muted There are no posts yet.
+			
+			//if data.categories.length
+				.col-md-2
+					if data.categories.length
+						h5.text-muted Filter by tag
+						ul.list-unstyled.tags-list
+							li: a(href='/overwatch', class=!data.categories ? 'active' : false) All
+							each tag in data.categories
+								li: a(href='/overwatch/' + tag.key, class=data.category && data.category.id == tag.id ? 'active' : false).list-group-item= tag.name
 		//- About
 		article.section.section--featured.home-about: .container
 			h2 In Sydney and into JavaScript? You need to join SydJS!
