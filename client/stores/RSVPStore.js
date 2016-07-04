@@ -10,7 +10,7 @@ var meetup = {};
 var rsvp = {};
 var attendees = [];
 
-var REFRESH_INTERVAL = 5000; // 5 seconds
+var REFRESH_INTERVAL = 0; // 5 seconds
 
 var refreshTimeout = null;
 function cancelRefresh() {

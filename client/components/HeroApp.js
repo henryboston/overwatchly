@@ -2,7 +2,7 @@ var React = require('react');
 var request = require('superagent');
 var RSVPStore = require('../stores/RSVPStore');
 
-var HeroApp = React.createClass({
+//var HeroApp = React.createClass({
 
 	getInitialState: function() {
 		return {
