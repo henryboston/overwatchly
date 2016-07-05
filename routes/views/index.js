@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
 	
 	locals.section = 'home';
 	locals.meetup = {};
-	locals.page.title = 'Overwatchly';
+	locals.page.title = 'Overwatchly - Overwatch guides, strategy and meta info to help improve your game!';
 	
 	locals.rsvpStatus = {};
 

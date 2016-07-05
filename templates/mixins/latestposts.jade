@@ -1,9 +1,10 @@
 mixin latestposts(latestposts)
-	li.post
-		.latestpost
-			if latestposts.image.exists
-				a(href='/overwatch/post/' + latestposts.slug).post-image: img(src=latestposts._.image.thumbnail(600,320), alt=latestposts.title).img-responsive
-			.info
-				h4(itemprop='name').post-title
-					a(href='/overwatch/post/' + latestposts.slug, itemprop='url')=latestposts.title
-				.post-content-brief(itemprop='description')!= latestposts.content.brief
+	a(href='/overwatch/post/' + latestposts.slug)
+		li.post
+			.latestpost
+				if latestposts.image.exists
+					a(href='/overwatch/post/' + latestposts.slug).post-image: img(src=latestposts._.image.thumbnail(600,320), alt=latestposts.title).img-responsive
+				.info
+					h4(itemprop='name').post-title
+						a(href='/overwatch/post/' + latestposts.slug, itemprop='url')=latestposts.title
+					.post-content-brief(itemprop='description')!= latestposts.content.brief

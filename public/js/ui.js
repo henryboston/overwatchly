@@ -5,9 +5,9 @@ $(function() {
 		$.cookie('dismissAppBanner', true);
 	});
 
-	if (!$.cookie('dismissAppBanner')) {
-		$('#app-alert').removeClass('hidden-md hidden-lg');
-	}
+	//if (!$.cookie('dismissAppBanner')) {
+	//	$('#app-alert').removeClass('hidden-md hidden-lg');
+	//}
 
 
 

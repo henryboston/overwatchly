@@ -8,7 +8,7 @@ exports = module.exports = function(req, res) {
 	
 	// Init locals
 	locals.section = 'blog';
-	locals.page.title = 'Overwatchly';
+	locals.page.title = 'Overwatchly - Overwatch guides, strategy and meta info to help improve your game!';
 	locals.filters = {
 		category: req.params.category
 	};

@@ -30,7 +30,7 @@ block content
 				.form-group
 					strong.col-sm-2.control-label Notify me
 					.col-sm-10
-						.checkbox: label
+						//.checkbox: label
 							input(type='checkbox', name='notifications.meetups' value='true' checked=user.notifications.meetups)
 							|  When there is a new meetup
 						.checkbox: label
@@ -43,7 +43,7 @@ block content
 				
 				//- Unconfigured Services
 				
-				if !user.services.github.isConfigured
+				//if !user.services.github.isConfigured
 					.form-group
 						label.col-sm-2.control-label Github
 						.col-sm-10
