@@ -53,3 +53,63 @@ li.post:last-child {
 .latestpost .info p {
 	margin-top: 5px;
 }
+
+.main-post {
+    position: relative;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: 60ms all ease-out;
+    -moz-transition: 60ms all ease-out;
+    transition: 60ms all ease-out;
+    background-color: #000;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    height: 250px;
+    text-align: left;
+}
+.main-post:hover {
+	cursor: pointer;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.main-post img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.9;
+}
+.main-info {
+	position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 12px 15px;
+}
+.main-info h2 {
+	padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 26px;
+}
+.main-info h2 a {
+	color: #FFF;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.main-info h4 a {
+	color: #FFF;
+	text-transform: uppercase;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
