@@ -1,5 +1,5 @@
 mixin main(main)
-	.col-sm-6
+	.main.col-md-6.col-sm-12.col-xs-12
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
 			if main.image.exists
 				a(href='/overwatch/post/' + main.slug).post-image: img(src=main._.image.thumbnail(600,320), alt=main.title).img-responsive

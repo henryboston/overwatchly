@@ -5,6 +5,7 @@ extends ../../layouts/default
 include ../../mixins/post
 include ../../mixins/featured
 include ../../mixins/main
+include ../../mixins/latestposts
 
 include ../../mixins/meetup-talk
 include ../../mixins/advertisement
@@ -35,34 +36,11 @@ block intro
 //- BODY
 block content
 	.page-content
-		.row
-			div(class= data.categories.length || !data.posts.length ? 'col-md-10' : 'col-md-10 col-md-offset-1')
-				if data.featured.length
-					.post-cards.row(itemscope itemtype="http://schema.org/Blog")
-						each post in data.posts
-							+post(post)
-			//if data.categories.length
-				.col-md-2
-					if data.categories.length
-						h5.text-muted Filter by tag
-						ul.list-unstyled.tags-list
-							li: a(href='/overwatch', class=!data.categories ? 'active' : false) All
-							each tag in data.categories
-								li: a(href='/overwatch/' + tag.key, class=data.category && data.category.id == tag.id ? 'active' : false).list-group-item= tag.name
-		//- About
-		//article.section.section--featured.home-about: .container
-			h2 In Sydney and into JavaScript? You need to join SydJS!
-			.row: .col-sm-8.col-sm-offset-2
-				p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
-			if !user
-				.row: .col-sm-4.col-sm-offset-4
-					a(href='/join', data-from=page.path).js-auth-trigger.btn.btn-lg.btn-block.btn-primary.mv-1
-						span.text-caps Join SydJS now
-			p.mt-1
-				a(href='/about') Learn more about SydJS
-				|  &nbsp;&middot;&nbsp; 
-				a(href='/members') Find your friends in SydJS
-			p.mt-1: a(href="https://twitter.com/sydjs", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @sydjs
+		.latest-posts.col-md-8.col-sm-12
+			ul
+				if data.latestposts.length
+					each latestposts in data.latestposts
+						+latestposts(latestposts)
 //- JS
 block js
 

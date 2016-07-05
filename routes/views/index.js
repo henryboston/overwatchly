@@ -27,7 +27,8 @@ exports = module.exports = function(req, res) {
 		posts: [],
 		categories: [],
 		featured: [],
-		main: []
+		main: [],
+		latestposts: []
 	};
 	
 	// Load the first, NEXT meetup
@@ -152,9 +153,9 @@ exports = module.exports = function(req, res) {
 		
 		var q = keystone.list('Post').model.find().where('state', 'main').sort('-publishedDate').populate('author categories');
 		
-		if (locals.data.category) {
-			q.where('categories').in([main]);
-		}
+		//if (locals.data.category) {
+		//	q.where('categories').in([main]);
+		//}
 		
 		q.exec(function(err, results) {
 			locals.data.main = results;
@@ -173,7 +174,7 @@ exports = module.exports = function(req, res) {
 		}
 		
 		q.exec(function(err, results) {
-			locals.data.posts = results;
+			locals.data.latestposts = results;
 			next(err);
 		});
 		
