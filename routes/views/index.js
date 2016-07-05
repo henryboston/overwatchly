@@ -1,9 +1,11 @@
 var keystone = require('keystone'),
-	moment = require('moment')
+	moment = require('moment'),
+	async = require('async');
 
 var Meetup = keystone.list('Meetup'),
 	Post = keystone.list('Post'),
 	RSVP = keystone.list('RSVP');
+	//Featured = keystone.list('Featured');
 
 exports = module.exports = function(req, res) {
 	
@@ -12,7 +14,7 @@ exports = module.exports = function(req, res) {
 	
 	locals.section = 'home';
 	locals.meetup = {};
-	locals.page.title = 'Welcome to SydJS';
+	locals.page.title = 'Overwatchly';
 	
 	locals.rsvpStatus = {};
 
@@ -23,7 +25,8 @@ exports = module.exports = function(req, res) {
 	};
 	locals.data = {
 		posts: [],
-		categories: []
+		categories: [],
+		featured: []
 	};
 	
 	// Load the first, NEXT meetup
@@ -86,15 +89,71 @@ exports = module.exports = function(req, res) {
 		
 	});
 
+	// Load all categories
+	view.on('init', function(next) {
+		
+		keystone.list('PostCategory').model.find().sort('name').exec(function(err, results) {
+			
+			if (err || !results.length) {
+				return next(err);
+			}
+			
+			locals.data.categories = results;
+			
+			// Load the counts for each category
+			async.each(locals.data.categories, function(category, next) {
+				
+				keystone.list('Post').model.count().where('category').in([category.id]).exec(function(err, count) {
+					category.postCount = count;
+					next(err);
+				});
+				
+			}, function(err) {
+				next(err);
+			});
+			
+		});
+		
+	});
 	
+	//Load the current category filter
+	view.on('init', function(next) {
+		
+		if (req.params.category) {
+			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function(err, result) {
+				locals.data.category = result;
+				next(err);
+			});
+		} else {
+			next();
+		}
+		
+	});
+	
+	// Load the posts
+	view.on('init', function(next) {
+		
+		var q = keystone.list('Post').model.find().where('state', 'featured').sort('-publishedDate').populate('author categories');
+		
+		if (locals.data.category) {
+			q.where('categories').in([locals.data.category]);
+		}
+		
+		q.exec(function(err, results) {
+			locals.data.featured = results;
+			next(err);
+		});
+		
+	});
+
 	// Load the posts
 	view.on('init', function(next) {
 		
 		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author categories');
 		
-		//if (locals.data.category) {
-		//	q.where('categories').in([locals.data.category]);
-		//}
+		if (locals.data.category) {
+			q.where('categories').in([locals.data.category]);
+		}
 		
 		q.exec(function(err, results) {
 			locals.data.posts = results;

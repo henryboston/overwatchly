@@ -20,56 +20,12 @@ block intro
 				.hero-background
 					//-img(src='/images/placeholders/sydney-1.jpg')
 				.hero-intro-content
-					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
-					h1.title= meetup.name
-					p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
-					p.byline #{meetup.place} &#8212; 
-						a(href='http://maps.google.com.au/?daddr=' + (meetup.map || meetup.place), target='_blank') Directions
-				//if meetup.state === 'active'
-					#react-hero-button
-			//- Details
-			//section.hero-details: .container
-				.row: .col-sm-10.col-sm-offset-1: .row
-					
-					//- Description
-					.col-md-5
-						//- h3.mb-1 The meetup
-						.description!= meetup.description
+					div(class= 'col-md-12 featured')
+						if data.featured.length
+							.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+								each post in data.featured
+									+post(post)
 
-					//- Talks
-					.col-md-6.col-md-offset-1
-						if meetup.talks.length
-							//- h3.mb-1 The talks
-							.meetup-talks
-								ul.list-unstyled.talks-list
-									each talk in meetup.talks
-										li.talk.row
-											//.col-xs-3
-												.talk__speakers
-													if talk.who.length
-														each speaker, i in talk.who
-															img(src=speaker.photo.exists ? speaker._.photo.thumbnail(320,320) : speaker.avatarUrl || '/images/avatar.png', width=160, height=160, alt=speaker.name.full, class=talk.who.length > 1 ? 'talk__photo--mini' : null).talk__photo
-													else
-														img(src='/images/avatar.png', width=160, height=160, alt='There is no speaker...').talk__photo
-												//- if talk.who.length
-													.talkers
-														for photo in talk.who
-															img(src='http://fillmurray.com/100/100').img-circle
-											.col-xs-9
-												.talk-summary
-													h5.title= talk.name
-													p.subtitle.mb-1 by 
-														each speaker, i in talk.who
-															if i
-																| , 
-															if speaker.isPublic 
-																a(href=speaker.url)=speaker.name.full
-															else
-																=speaker.name.full
-													.summary!= talk.description
-				//- Attending
-				//section.attending
-					#react-attending
 
 //- BODY
 block content
@@ -79,16 +35,10 @@ block content
 				if filters.category && !data.category
 					h3 Invalid Category.
 				else
-					if data.posts.length
+					if data.featured.length
 						.post-cards.row(itemscope itemtype="http://schema.org/Blog")
 							each post in data.posts
 								+post(post)
-					else
-						if data.category
-							h3.text-muted No posts in the category #{data.category.name}.
-						else
-							h3.text-muted There are no posts yet.
-			
 			//if data.categories.length
 				.col-md-2
 					if data.categories.length
@@ -98,7 +48,7 @@ block content
 							each tag in data.categories
 								li: a(href='/overwatch/' + tag.key, class=data.category && data.category.id == tag.id ? 'active' : false).list-group-item= tag.name
 		//- About
-		article.section.section--featured.home-about: .container
+		//article.section.section--featured.home-about: .container
 			h2 In Sydney and into JavaScript? You need to join SydJS!
 			.row: .col-sm-8.col-sm-offset-2
 				p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
