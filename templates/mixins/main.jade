@@ -1,16 +1,16 @@
-mixin post(post)
-	.col-sm-3
+mixin main(main)
+	.col-sm-6
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
-			if post.image.exists
-				a(href='/overwatch/post/' + post.slug).post-image: img(src=post._.image.thumbnail(600,320), alt=post.title).img-responsive
+			if main.image.exists
+				a(href='/overwatch/post/' + main.slug).post-image: img(src=main._.image.thumbnail(600,320), alt=main.title).img-responsive
 			.post-summary
 				//.post-byline
 					.post-author: a(href='/overwatch/post/' + post.slug)=post.author.name.full
 					//- .date-stamp: em=moment(post.publishedDate).fromNow()
 
 				h4(itemprop='name').post-title
-					a(href='/overwatch/post/' + post.slug, itemprop='url')=post.title
-				.post-content-brief(itemprop='description')!= post.content.brief
+					a(href='/overwatch/post/' + main.slug, itemprop='url')=main.title
+				.post-content-brief(itemprop='description')!= main.content.brief
 	//-article(role="article", itemscope itemtype="http://schema.org/BlogPosting").blog-post
 		.blog-post__date.illustrative-heading
 			span.illustrative-heading__line

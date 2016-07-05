@@ -3,6 +3,9 @@ extends ../../layouts/default
 
 //- INCLUDES
 include ../../mixins/post
+include ../../mixins/featured
+include ../../mixins/main
+
 include ../../mixins/meetup-talk
 include ../../mixins/advertisement
 
@@ -23,8 +26,10 @@ block intro
 					div(class= 'col-md-12 featured')
 						if data.featured.length
 							.post-cards.row(itemscope itemtype="http://schema.org/Blog")
-								each post in data.featured
-									+post(post)
+								each main in data.main
+									+main(main)
+								each featured in data.featured
+									+featured(featured)
 
 
 //- BODY
@@ -32,13 +37,10 @@ block content
 	.page-content
 		.row
 			div(class= data.categories.length || !data.posts.length ? 'col-md-10' : 'col-md-10 col-md-offset-1')
-				if filters.category && !data.category
-					h3 Invalid Category.
-				else
-					if data.featured.length
-						.post-cards.row(itemscope itemtype="http://schema.org/Blog")
-							each post in data.posts
-								+post(post)
+				if data.featured.length
+					.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+						each post in data.posts
+							+post(post)
 			//if data.categories.length
 				.col-md-2
 					if data.categories.length

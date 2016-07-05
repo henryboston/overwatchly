@@ -26,7 +26,8 @@ exports = module.exports = function(req, res) {
 	locals.data = {
 		posts: [],
 		categories: [],
-		featured: []
+		featured: [],
+		main: []
 	};
 	
 	// Load the first, NEXT meetup
@@ -141,6 +142,22 @@ exports = module.exports = function(req, res) {
 		
 		q.exec(function(err, results) {
 			locals.data.featured = results;
+			next(err);
+		});
+		
+	});
+
+	// Load the posts
+	view.on('init', function(next) {
+		
+		var q = keystone.list('Post').model.find().where('state', 'main').sort('-publishedDate').populate('author categories');
+		
+		if (locals.data.category) {
+			q.where('categories').in([main]);
+		}
+		
+		q.exec(function(err, results) {
+			locals.data.main = results;
 			next(err);
 		});
 		
