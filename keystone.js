@@ -19,8 +19,8 @@ var pkg = require('./package.json');
 
 keystone.init({
 
-	'name': 'SydJS',
-	'brand': 'SydJS',
+	'name': 'Overwatchly',
+	'brand': 'Overwatchly',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
@@ -29,7 +29,7 @@ keystone.init({
 
 	'views': 'templates/views',
 	'view engine': 'jade',
-	'view cache': false,
+	'view cache': true,
 
 	'emails': 'templates/emails',
 

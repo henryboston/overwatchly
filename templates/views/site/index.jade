@@ -24,13 +24,13 @@ block intro
 				.hero-background
 					//-img(src='/images/placeholders/sydney-1.jpg')
 				.hero-intro-content
-					div(class= 'col-md-12 featured')
+					div(class= 'col-md-12 featured')(itemscope itemtype="http://schema.org/Blog")
 						if data.featured.length
-							.post-cards.row(itemscope itemtype="http://schema.org/Blog")
-								each main in data.main
-									+main(main)
-								each featured in data.featured
-									+featured(featured)
+							//.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+							each main in data.main
+								+main(main)
+							each featured in data.featured
+								+featured(featured)
 
 
 //- BODY
