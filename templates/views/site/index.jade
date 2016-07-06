@@ -12,35 +12,35 @@ include ../../mixins/advertisement
 
 //- INTRO
 block intro
-
 	//- HERO
 	if !meetup
 		h2.text-center You've just deployed a new site! Go add some data :)
 	else
 		article#hero.hero-meetup.hero-meetup--next
-			
 			//- Intro
 			section.hero-intro.hero-intro--hasmask
 				.hero-background
 					//-img(src='/images/placeholders/sydney-1.jpg')
 				.hero-intro-content
 					div(class= 'col-md-12 featured')(itemscope itemtype="http://schema.org/Blog")
-						if data.featured.length
-							//.post-cards.row(itemscope itemtype="http://schema.org/Blog")
-							each main in data.main
-								+main(main)
-							each featured in data.featured
-								+featured(featured)
+						.container
+							if data.featured.length
+								//.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+								each main in data.main
+									+main(main)
+								each featured in data.featured
+									+featured(featured)
 
 
 //- BODY
 block content
 	.page-content
-		.latest-posts.col-md-12.col-sm-12
-			ul
-				if data.latestposts.length
-					each latestposts in data.latestposts
-						+latestposts(latestposts)
+		.container
+			.latest-posts.col-md-12.col-sm-12
+				ul
+					if data.latestposts.length
+						each latestposts in data.latestposts
+							+latestposts(latestposts)
 //- JS
 block js
 
@@ -54,6 +54,7 @@ block js
 	//- REACT SCRIPTS
 	script(src='/js/packages.js')
 	//script(src='/js/home.js')
+	script(src="/keystone/js/lib/cloudinary/jquery.cloudinary.js")
 	script.
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 	if google_api_key
