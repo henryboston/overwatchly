@@ -37,8 +37,9 @@ block content
 							a(href="https://twitter.com/share", data-via="overwatchly", data-hashtags="Overwatch", data-count="button", data-dnt="true").twitter-share-button Tweet
 						span.share-button
 							.g-plusone(data-size="medium")
+				.post-content-brief(itemprop='description')!= post.content.brief
 				if post.image.exists
-					.post-image.mv-3: img(src=post._.image.fit(720,420)).img-responsive.img-thumbnail
+					.post-image.mv-1: img(src=post._.image.fit(720,420)).img-responsive.img-thumbnail
 				!= post.content.full
 
 				- Comment

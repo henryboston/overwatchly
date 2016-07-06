@@ -6,7 +6,7 @@ block flash-messages
 block intro
 	.page-intro: .container
 		h1.page-title Members
-		p.lead The people who make up SydJS. 
+		p.lead The people who make up Overwatchly. 
 			if !user
 				a(href='/join').js-auth-trigger Add your tile
 
@@ -33,14 +33,14 @@ mixin member(member)
 block content
 	.container
 		+flash-messages(messages)
-		if organisers.length
+		//if organisers.length
 			.members-group
 				h3.text-caps.mb-1 Organisers
 				ul.list-unstyled.members-list
 					li.grid-sizer
 					each organiser in organisers
 						+member(organiser)
-		if speakers.length
+		//if speakers.length
 			.members-group
 				h3.text-caps.mt-2.mb-1 Speakers
 				ul.list-unstyled.members-list
