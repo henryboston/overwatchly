@@ -47,8 +47,8 @@ keystone.init({
 	'google api key': process.env.GOOGLE_BROWSER_KEY,
 	'google server api key': process.env.GOOGLE_SERVER_KEY,
 
-	'ga property': process.env.GA_PROPERTY,
-	'ga domain': process.env.GA_DOMAIN,
+	'ga property': 'UA-80395833-1',
+	'ga domain': 'overwatchly.com',
 
 	'chartbeat property': process.env.CHARTBEAT_PROPERTY,
 	'chartbeat domain': process.env.CHARTBEAT_DOMAIN,
