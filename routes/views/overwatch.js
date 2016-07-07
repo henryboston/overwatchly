@@ -61,10 +61,11 @@ exports = module.exports = function(req, res) {
 	// Load the posts
 	view.on('init', function(next) {
 		
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author categories');
+		var q = keystone.list('Post').model.find().where('state').in(['published', 'featured', 'main']).sort('-publishedDate').populate('author categories');
 		
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);
+			//f.where('categories').in([locals.data.category]);
 		}
 		
 		q.exec(function(err, results) {
