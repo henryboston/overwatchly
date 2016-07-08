@@ -53,6 +53,13 @@ keystone.init({
 	'chartbeat property': process.env.CHARTBEAT_PROPERTY,
 	'chartbeat domain': process.env.CHARTBEAT_DOMAIN,
 
+	'wysiwyg additional plugins': 'images',
+  	'wysiwyg additional buttons': 'images',
+  	'wysiwyg additional plugins': 'paste',
+	'wysiwyg additional options': {
+	 	'paste_data_images': true
+	 },
+
 	'basedir': __dirname
 
 });
