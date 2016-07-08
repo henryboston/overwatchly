@@ -54,6 +54,8 @@ keystone.init({
 	'chartbeat domain': process.env.CHARTBEAT_DOMAIN,
 
 	'wysiwyg additional plugins': 'images',
+	'wysiwyg images': true,
+	'wysiwyg cloudinary images': true,
   	'wysiwyg additional buttons': 'images',
   	'wysiwyg additional plugins': 'paste',
 	'wysiwyg additional options': {
