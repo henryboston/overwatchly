@@ -12,10 +12,32 @@ html
 		
 		meta(charset="utf-8")
 		meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
-
-		//- Appstore smart banner
-		//meta(name="apple-itunes-app", content="app-id=897396382")
-		
+		if post
+			if post.meta.title
+				meta(name="og:title", content=post.meta.title)
+				meta(name="twitter:title", content=post.meta.title)
+			else
+				meta(name="og:title", content=post.title)
+				meta(name="twitter:title", content=post.title)
+			if post.meta.description
+				meta(name="description", content=post.meta.description)
+				meta(name="og:description", content=post.meta.description)
+				meta(name="twitter:description", content=post.meta.description)
+			else
+				meta(name="description", content=post.content.brief)
+				meta(name="og:description", content=post.content.brief)
+				meta(name="twitter:description", content=post.content.brief)
+			meta(property="og:type", content="article")
+			meta(property="twitter:card", content="summary_large_image")
+			meta(property="twitter:image:src", content=post.image.url)
+			meta(property="og:image", content=post.image.url)
+			meta(property="article:published_time", content=post.publishedDate)
+			- var categories = [];
+			each category in post.categories
+				meta(property="article:tag", content=category.key)
+		meta(property="keywords", content="Overwatch, Overwatch Strategy, Overwatch Meta, Overwatch Guides, Overwatch Esports, Competitive Overwatch")
+		meta(property="og:image", content="/images/logosq.png")
+		meta(property="twitter:image:src", content="/images/logosq.png")
 		title= page.title
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 		link(href="/styles/site.min.css", rel="stylesheet")
