@@ -15,8 +15,8 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Home',		key: 'home',		href: '/' },
 		//{ label: 'About',		key: 'about',		href: '/about' },
 		//{ label: 'Members',		key: 'members',		href: '/members' },
-		{ label: 'Strategy',	key: 'strategy',		href: '/overwatch/strategy' },
-		{ label: 'Meta',		key: 'overwatch',		href: '/overwatch' }
+		{ label: 'Articles',		key: 'overwatch',		href: '/overwatch' },
+		{ label: 'Strategy',	key: 'strategy',		href: '/overwatch/strategy' }
 		//{ label: 'Showbag',		key: 'showbag',		href: '/showbag' }
 		//{ label: 'esports',		key: 'meetups',		href: '/meetups' }
 	];
