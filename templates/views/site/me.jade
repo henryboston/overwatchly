@@ -20,10 +20,10 @@ block content
 				input(type='hidden', name='action', value='profile.details')
 				h3 Private Info
 				.form-group
-					label.col-sm-2.control-label Name
+					label.col-sm-2.control-label Username
 					.col-sm-10: .form-row
-						.col-xs-6: input(type='text', name='name.first' value=user.name.first).form-control
-						.col-xs-6: input(type='text', name='name.last' value=user.name.last).form-control
+						//.col-xs-6: input(type='text', name='name.first' value=user.name.first).form-control
+						.col-xs-10: input(type='text', name='name.last' value=user.name.last).form-control
 				.form-group
 					label.col-sm-2.control-label Email
 					.col-sm-10: input(type='email', name='email' value=user.email).form-control
@@ -38,7 +38,7 @@ block content
 							|  When there is a new post
 				hr.mv-2
 				h3 Your Services
-				p.help-block.mb-2 You can authenticate yourself on the SydJS website with any of the services you connect. When connected, links to your Twitter and Github will be displayed on your profile.
+				p.help-block.mb-2 You can authenticate yourself on the Overwatchly website with any of the services you connect. When connected, links to your Twitter and Github will be displayed on your profile.
 				
 				
 				//- Unconfigured Services
@@ -116,7 +116,7 @@ block content
 					.col-sm-10
 						label.checkbox-inline
 							input(type='checkbox', name='isPublic', value='true', checked=user.isPublic ? 'true' : null)
-							|  Show my profile on the SydJS website
+							|  Show my profile on the Overwatchly website
 				.form-group
 					label.col-sm-2.control-label Website
 					.col-sm-10: input(type='text', name='website' value=user.website).form-control
