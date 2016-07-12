@@ -8,10 +8,12 @@ block content
 				h2 Invalid Post.
 			else
 				header
-					//if post.state != 'published' && user.isAdmin
-						.mt-1: .alert.alert-danger This Post has not been published yet. 
-							a(href='/keystone/posts/' + post.id).alert-link Open Keystone
-							|  to publish it.
+					if post.state = 'published'
+						.mt-1: .alert.alert-danger 
+							a(href="/" title="Overwatchly" class="promote") Overwatchly 
+							| is hosting a $50 Blizzard ‑ Battle.net Gift Card Giveaway! Simply 
+							a(href='/join', data-from=page.path class="promote").js-auth-trigger Join 
+							| to be entered.
 					
 					h2.blog-post__title= post.title
 				.post-content-brief(itemprop='description')!= post.content.brief
