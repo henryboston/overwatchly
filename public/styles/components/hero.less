@@ -103,10 +103,24 @@
 				font-size: @font-size-base;
 			}
 		}
+
 		.hero-details {
 			padding: 5em 0;
 			p { font-size: @font-size-base; }
 		}
+	}
+}
+@media (max-width: 767px) {
+	.latestpost .info h4 {
+		font-size: 1rem !important;
+		line-height: 100% !important;
+	}
+	.latestpost  .post-image {
+		display: none;
+	}
+	.latestpost .info {
+		width: auto !important;
+		padding-left: 0px !important;
 	}
 }
 .hero-button {

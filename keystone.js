@@ -88,8 +88,8 @@ keystone.set('locals', {
 keystone.set('email locals', {
 	utils: keystone.utils,
 	host: (function() {
-		if (keystone.get('env') === 'staging') return 'http://sydjs-beta.herokuapp.com';
-		if (keystone.get('env') === 'production') return 'http://www.sydjs.com';
+		if (keystone.get('env') === 'staging') return 'http://overwatchly.herokuapp.com';
+		if (keystone.get('env') === 'production') return 'http://www.overwatchly.com';
 		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '3000');
 	})()
 });
