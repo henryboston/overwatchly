@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 				if (post.state == 'published' || post.state == 'featured' || post.state == 'main' || (req.user && req.user.isAdmin) || (req.user && post.author && (req.user.id == post.author.id))) {
 					locals.post = post;
 					locals.post.populateRelated('comments[author]', next);
-					locals.page.title = post.title + ' - Overwatchly';
+					locals.page.title = post.title;
 				} else {
 					return res.notfound('Post not found');
 				}
