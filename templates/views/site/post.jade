@@ -11,11 +11,18 @@ block content
 					if post.state = 'published'
 						.mt-1: .alert.alert-danger 
 							a(href="/" title="Overwatchly" class="promote") Overwatchly 
-							| is hosting a $50 Blizzard ‑ Battle.net Gift Card Giveaway! Simply 
+							| is giving away a FREE $50 Blizzard ‑ Battle.net Gift Card! Simply 
 							a(href='/join', data-from=page.path class="promote").js-auth-trigger Join 
-							| to be entered.
-					
+							| or share a post to be entered into the drawing.
 					h2.blog-post__title= post.title
+					//- sharing buttons
+					.share-buttons
+						span.share-button
+							.fb-like(data-href="http://www.sydjs.com/blog/post/" + post.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+						span.share-button
+							a(href="https://twitter.com/share", data-via="overwatchly", data-hashtags="Overwatch", data-count="button", data-dnt="true").twitter-share-button Tweet
+						span.share-button
+							.g-plusone(data-size="medium")
 				.post-content-brief(itemprop='description')!= post.content.brief
 				if post.image.exists
 					.post-image.mv-1: img(src=post._.image.fit(720,420)).img-responsive.img-thumbnail
@@ -35,14 +42,7 @@ block content
 								else
 									|&nbsp;
 					
-				//- sharing buttons
-				.share-buttons
-					//span.share-button
-						.fb-like(data-href="http://www.sydjs.com/blog/post/" + post.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
-					span.share-button
-						a(href="https://twitter.com/share", data-via="overwatchly", data-hashtags="Overwatch", data-count="button", data-dnt="true").twitter-share-button Tweet
-					span.share-button
-						.g-plusone(data-size="medium")
+				
 				- Comment
 					if user
 						.comments
