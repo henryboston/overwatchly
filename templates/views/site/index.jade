@@ -37,8 +37,13 @@ block content
 	.page-content
 		.container
 			.latest-posts.col-md-12.col-sm-12
-				script( src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-				ins.adsbygoogle(style="display:block", data-ad-client="ca-pub-9309581458025353", data-ad-slot="6738127624", data-ad-format="auto")
+				script( aysnc, src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+				ins.adsbygoogle(
+					style='display:block'
+					data-ad-client='ca-pub-9309581458025353'
+					data-ad-test='on'
+					data-ad-slot='6738127624'
+					data-ad-format='auto')
 				script.
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				ul
@@ -48,16 +53,16 @@ block content
 //- JS
 block js
 
-	if meetup
+	//if meetup
 		script.
 			SydJS.currentMeetupId = !{JSON.stringify(meetup.id)};
-	if user
+	//if user
 		script.
 			SydJS.user = !{JSON.stringify(user)};
 
 	//- REACT SCRIPTS
 	script(src='/js/packages.js')
-	script(src='/js/home.js')
+	//script(src='/js/home.js')
 	script(src="/keystone/js/lib/cloudinary/jquery.cloudinary.js")
 	script.
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
