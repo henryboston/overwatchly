@@ -35,6 +35,9 @@ keystone.set('500', function (err, req, res, next) {
 	});
 });
 
+//gc
+global.gc();
+
 // Load Routes
 var routes = {
 	api: importRoutes('./api'),
