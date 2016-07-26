@@ -59,7 +59,8 @@ keystone.init({
   	'wysiwyg additional buttons': 'images',
   	'wysiwyg additional plugins': 'paste',
 	'wysiwyg additional options': {
-	 	'paste_data_images': true
+	 	'paste_data_images': true,
+	 	'extended_valid_elements':'script[language|type|src],style[type]',
 	 },
 
 	'basedir': __dirname
