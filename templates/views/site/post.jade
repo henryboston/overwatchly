@@ -8,11 +8,6 @@ block content
 				h2 Invalid Post.
 			else
 				header
-					if post.state = 'published'
-						.mt-1: .alert.alert-danger 
-							| We are giving away a <strong>FREE $50 Battle.net Gift Card</strong>! Simply 
-							a(href='/join', data-from=page.path class="promote").js-auth-trigger <strong>Join</strong> 
-							|or <strong>Tweet</strong> a post to be eligible.
 					h2.blog-post__title= post.title
 					//- sharing buttons
 				.post-content-brief(itemprop='description')!= post.content.brief
@@ -57,6 +52,11 @@ block content
 									| ,&nbsp;
 								else
 									|&nbsp;	
+				if post.state = 'published'
+					.mt-1: .alert.alert-danger 
+						| We are giving away a <strong>FREE $50 Battle.net Gift Card</strong>! Simply 
+						a(href='/join', data-from=page.path class="promote").js-auth-trigger <strong>Join</strong> 
+						|or <strong>Tweet</strong> a post to be eligible.
 				.share-buttons
 					span.share-button
 						a(href="https://twitter.com/share", data-via="overwatchly", data-hashtags="Overwatch", data-count="button", data-dnt="true").twitter-share-button Tweet
