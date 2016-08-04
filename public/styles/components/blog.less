@@ -151,3 +151,69 @@
 		}
 	}
 }
+
+//POV
+.poviFrame {
+	position: relative;
+	padding-bottom: 65.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: auto; 
+	-webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY 
+	border: 0px;
+} 
+.poviFrame iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.heroes-mini-item {
+	position: relative;
+	display: block;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	margin: 0 0 20px;
+	background: #444;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: all 0.15s ease-in-out;
+}
+.mini-icon {
+	display: block;
+    height: 74px;
+    background: rgba(0,0,0,0.4);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    opacity: 0.8;
+    transition: all 0.15s ease-in-out;
+}
+.mini-icon:hover {
+	opacity: 1;
+}
+.mini-info {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 4px 4px;
+    color: #fff;
+    border-radius: 0 0 3px 3px;
+    line-height: 14px;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 14.3px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+    background-image: -o-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0);
+    transition: all 0.15s ease-in-out;
+}
+

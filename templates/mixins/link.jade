@@ -1,20 +1,26 @@
 mixin link(link)
-	article(role="article", itemscope itemtype="http://schema.org/BlogPosting").links-list
-		.row
-			.col-xs-1
-				h3
-					span.entypo.entypo-link.text-muted
-			.col-xs-11
-				h4(itemprop='name').mt-5
-					a(href='/links/link/' + link.slug, itemprop='url').text-dark
-						strong= link.label
-				if link.author
-					p.byline: small.text-muted #{link.author.name.full} &middot; added #{moment(link.publishedDate).fromNow()}
-				p.link: a(href=link.href, target='_blank'): em!=link.href
-				if link.tags && link.tags.length
-					ul.list-unstyled.tags-list
-						each tag, i in link.tags
-							li: a(href='/links/' + tag.key)= tag.name
-				.description
-					!= link.description.html
+	.col-sm-4
+		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
+			div.poviFrame
+				iframe(src=link.href, allowfullscreen, frameborder='0')
+			.post-summary
+				//.post-byline
+					.post-author: a(href='/overwatch/post/' + post.slug)=post.author.name.full
+					//- .date-stamp: em=moment(post.publishedDate).fromNow()
+
+				h4(itemprop='name').post-title
+					a(href='/vods/vod/' + link.slug, itemprop='url')=link.label
+				.post-content-brief(itemprop='description')
+					<strong>Hero: </strong> 
+					each cat in link.tags
+						a(href='/vods/' + cat.key)= cat.name
+					br
+					<strong>Map: </strong>
+					=link.map
+					br
+					<strong>Skill: </strong>
+					=link.skill
+					br
+					<strong>Player: </strong>
+					=link.player
 		

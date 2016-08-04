@@ -2,7 +2,7 @@ extends ../../layouts/default
 
 include ../../mixins/link
 
-block intro
+//block intro
 	.page-intro: .container
 		h1 Links
 		if data.tag
@@ -19,7 +19,7 @@ block intro
 block content
 	.page-content: .container
 		.row
-			.col-sm-9
+			.col-sm-12
 				if filters.tag && !data.tag
 					h3 Invalid tag.
 				else

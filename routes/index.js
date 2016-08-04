@@ -36,7 +36,7 @@ keystone.set('500', function (err, req, res, next) {
 });
 
 //gc
-global.gc();
+//global.gc();
 
 // Load Routes
 var routes = {
@@ -88,9 +88,9 @@ exports = module.exports = function (app) {
 	app.get('/members/mentors', routes.views.mentors);
 	app.get('/member/:member', routes.views.member);
 	app.get('/organisations', routes.views.organisations);
-	app.get('/links', routes.views.links);
-	app.get('/links/:tag?', routes.views.links);
-	app.all('/links/link/:link', routes.views.link);
+	app.get('/vods', routes.views.vods);
+	app.get('/vods/:tag?', routes.views.vods);
+	app.all('/vods/vod/:link', routes.views.vod);
 	app.get('/overwatch/:category?', routes.views.overwatch);
 	app.all('/overwatch/post/:post', routes.views.post);
 	app.get('/about', routes.views.about);

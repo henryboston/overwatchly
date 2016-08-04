@@ -30,3 +30,5 @@ mixin post(post)
 						li: a(href='/blog/' + tag.key)= tag.name
 			.description(itemprop='description')!= post.content.brief
 			p: a(href='/blog/post/' + post.slug, itemprop='url') Read more &rarr;
+
+

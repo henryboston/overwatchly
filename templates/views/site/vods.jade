@@ -1,0 +1,150 @@
+extends ../../layouts/default
+
+include ../../mixins/link
+
+//block intro
+	.page-intro: .container
+		h1 Links
+		if data.tag
+			p.lead Tutorials, Libraries, Frameworks and blog posts under <strong>#{data.tag.name}</strong>
+		else
+			p.lead Tutorials, Libraries, Frameworks and blog posts mentioned in SydJS talks, or just of general usefulness.
+		//- .buttons
+			if !user
+				a(href='/join').btn.btn-primary Join SydJS
+				a(href='/signin').btn.btn-default Sign In
+			else
+				a(href='/me/create/link').btn.btn-primary Add link
+
+block content
+	.page-content: .container
+		.row
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/logosq.png"); background-color:white;')
+					span.mini-info
+						span.mini-name All
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/ana').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/ana.png")')
+					span.mini-info
+						span.mini-name Ana
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/bastion').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/bastion.png")')
+					span.mini-info
+						span.mini-name Bastion
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/dva').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/dva.png")')
+					span.mini-info
+						span.mini-name D. Va
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/genji').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/genji.png")')
+					span.mini-info
+						span.mini-name Genji
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/hanzo').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/hanzo.png")')
+					span.mini-info
+						span.mini-name Hanzo
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/junkrat').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/junkrat.png")')
+					span.mini-info
+						span.mini-name Junkrat
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/lucio').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/lucio.png")')
+					span.mini-info
+						span.mini-name Lucio
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/mccree').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/mccree.png")')
+					span.mini-info
+						span.mini-name McCree
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/mei').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/mei.png")')
+					span.mini-info
+						span.mini-name Mei
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/mercy').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/mercy.png")')
+					span.mini-info
+						span.mini-name Mercy
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/pharah').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/pharah.png")')
+					span.mini-info
+						span.mini-name Pharah
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/reaper').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/reaper.png")')
+					span.mini-info
+						span.mini-name Reaper
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/reinhardt').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/reinhardt.png")')
+					span.mini-info
+						span.mini-name Reinhardt
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/roadhog').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/roadhog.png")')
+					span.mini-info
+						span.mini-name Roadhog
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/soldier76').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/soldier76.png")')
+					span.mini-info
+						span.mini-name Soldier: 76
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/symmetra').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/symmetra.png")')
+					span.mini-info
+						span.mini-name Symmetra
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/torbjorn').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/torbjorn.png")')
+					span.mini-info
+						span.mini-name Torbjörn
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/tracer').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/tracer.png")')
+					span.mini-info
+						span.mini-name Tracer
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/widowmaker').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/widowmaker.png")')
+					span.mini-info
+						span.mini-name Widowmaker
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/winston').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/winston.png")')
+					span.mini-info
+						span.mini-name Winston
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/zarya').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/zarya.png")')
+					span.mini-info
+						span.mini-name Zarya
+			.col-md-1.col-sm-2.col-xs-3
+				a(href='/vods/zenyatta').heroes-mini-item
+					span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/zenyatta.png")')
+					span.mini-info
+						span.mini-name Zenyatta
+		.row
+			.col-sm-12
+				if filters.tag && !data.tag
+					h3 Invalid tag.
+				else
+					if data.links.length
+						.blog
+							each link in data.links
+								+link(link)
+					else
+						if data.tag
+							h3.text-muted No links in the tag #{data.tag.name}.
+						else
+							h3.text-muted There are no VODs yet.
