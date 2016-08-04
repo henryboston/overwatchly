@@ -62,7 +62,7 @@ block content
 						a(href="https://twitter.com/share", data-via="overwatchly", data-hashtags="Overwatch", data-count="button", data-dnt="true").twitter-share-button Tweet
 				- Comment
 					.comments
-						h4.mb-1=post.comments.length == 0 ? 'Be the first to reply' : plural(post.comments.length, '* comment', '* comments')
+						//h4.mb-1=post.comments.length == 0 ? 'Be the first to reply' : plural(post.comments.length, '* comment', '* comments')
 						for comment in post.comments
 							if comment.author
 								.comment.media
@@ -84,6 +84,11 @@ block content
 										textarea(placeholder='Add your comment...', name='content').form-control
 										.mv-1
 											button(type='submit').btn.btn-success Submit
+						if !user
+							//- Join
+							.mv-1
+								a(href='/join', data-from-page.path).js-auth-trigger
+									button.btn.btn-success Join to comment
 block js
 	script(src='/js/common/share.js')
 	script(src="https://apis.google.com/js/plusone.js")
