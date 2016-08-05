@@ -8,11 +8,20 @@ mixin link(link)
 					a(href='/vods/vod/' + link.slug, itemprop='url')=link.label
 				.post-content-brief(itemprop='description')
 					<strong>Hero: </strong> 
-					each cat in link.tags
-						a(href='/vods/' + cat.key)= cat.name
-					br
-					<strong>Map: </strong>
-					=link.map
-					br
-					<strong>Skill: </strong>
-					=link.skill
+					each cat, index in link.tags
+						if link.tags.length > 1
+							if index == link.tags.length - 1
+								a(href='/vods/' + cat.key)= cat.name
+							else
+								a(href='/vods/' + cat.key)= cat.name
+								|, 
+						else
+							a(href='/vods/' + cat.key)= cat.name
+					if link.map
+						br
+						<strong>Map: </strong>
+						=link.map
+					if link.skill
+						br
+						<strong>Skill: </strong>
+						=link.skill
