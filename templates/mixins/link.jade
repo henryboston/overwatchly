@@ -4,11 +4,7 @@ mixin link(link)
 			div.poviFrame
 				iframe(src=link.href, allowfullscreen, frameborder='0')
 			.post-summary
-				//.post-byline
-					.post-author: a(href='/overwatch/post/' + post.slug)=post.author.name.full
-					//- .date-stamp: em=moment(post.publishedDate).fromNow()
-
-				h4(itemprop='name').post-title
+				h5(itemprop='name').post-title
 					a(href='/vods/vod/' + link.slug, itemprop='url')=link.label
 				.post-content-brief(itemprop='description')
 					<strong>Hero: </strong> 
@@ -20,7 +16,3 @@ mixin link(link)
 					br
 					<strong>Skill: </strong>
 					=link.skill
-					br
-					<strong>Player: </strong>
-					=link.player
-		

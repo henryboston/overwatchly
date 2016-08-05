@@ -10,6 +10,7 @@ exports = module.exports = function(req, res) {
 	
 	// Init locals
 	locals.section = 'links';
+	locals.page.title = 'Overwatchly - Overwatch POV VODs from high skilled players (commentary and scrims)';
 	locals.current = {
 		sort: (req.query.sort == 'name') ? 'name' : 'updated'
 	};
