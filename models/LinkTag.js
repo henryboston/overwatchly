@@ -11,7 +11,8 @@ var LinkTag = new keystone.List('LinkTag', {
 });
 
 LinkTag.add({
-	name: { type: String, required: true }
+	name: { type: String, required: true },
+	map: { type: String }
 });
 
 

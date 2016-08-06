@@ -48,6 +48,33 @@ exports = module.exports = function(req, res) {
 		});
 		
 	});
+
+	// Load all hero categories
+	view.on('init', function(next) {
+		
+		keystone.list('LinkTag').model.find().sort('map').exec(function(err, results) {
+			
+			if (err || !results.length) {
+				return next(err);
+			}
+			
+			locals.data.tags = results;
+			
+			// Load the counts for each category
+			async.each(locals.data.tags, function(tag, next) {
+				
+				keystone.list('Link').model.count().where('tag').in([tag.id]).exec(function(err, count) {
+					tag.linkCount = count;
+					next(err);
+				});
+				
+			}, function(err) {
+				next(err);
+			});
+			
+		});
+		
+	});
 	
 	// Load the current category filter
 	view.on('init', function(next) {

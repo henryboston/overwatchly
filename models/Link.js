@@ -15,14 +15,14 @@ var Link = new keystone.List('Link', {
 Link.add({
 	label: { type: String, required: true, initial: true },
 	href: { type: Types.Url, required: true, initial: true },
-	tags: { type: Types.Relationship, ref: 'LinkTag', many: true },
+	tags: { type: Types.Relationship, ref: 'LinkTag', many: true, initial: true },
 	skill: { type: Number, required: false, initial: true },
 	map: { type: Types.Select, options: 'Hanamura, Temple of Anubis, Volskaya Industries, Dorado, Route 66, Watchpoint: Gibraltar, Hollywood, King’s Row, Numbani, Ilios, Lijang Tower, Nepal', index: true },
 	player: { type: String, required: false, initial: true },
 	commentary: { type: Boolean, required: false, initial: false },
 	scrim: { type: Boolean, required: false, initial: false },
 	description: { type: Types.Markdown, initial: true },
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+	state: { type: Types.Select, options: 'draft, published, archived', default: 'published', index: true },
 	publishedDate: { type: Types.Date, index: true }
 });
 
