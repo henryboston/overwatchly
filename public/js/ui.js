@@ -211,6 +211,7 @@ $(function() {
 	//vods section
 	$('.poviFrame').on('click', function() {
 		var href = $(".youtube").attr('href');
+		$(this).addClass('hidePlay');
 	    var id = getYoutubeID(href);
 	    var iframeSrc = "//www.youtube.com/embed/"+id+"?autoplay=1";
 	    $(this).html('<iframe width="560" height="315" src='+iframeSrc+' frameborder="0" allowfullscreen></iframe>').css('background', 'none');
@@ -224,6 +225,6 @@ $(function() {
 	    var id = getYoutubeID( this.href );
 	    this.id = id;
 	    var thumb_url = "http://img.youtube.com/vi/"+id+"/maxresdefault.jpg";
-	    $('<img class="img-responsive" src="'+thumb_url+'" />').appendTo($(this.parentNode));
+	    $('<img class="img-responsive povImg" src="'+thumb_url+'" />').appendTo($(this.parentNode));
 	    
 	});
