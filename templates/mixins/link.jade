@@ -1,7 +1,7 @@
 mixin link(link)
 	.col-sm-4
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
-			h5(itemprop='name' style='padding-top: 15px; padding-left: 10px').post-title
+			h5(itemprop='name' style='padding-top: .5em; padding-left: .5em').post-title
 				a(href='/vods/vod/' + link.slug, itemprop='url')=link.label
 			div.poviFrame
 				a.youtube(href=link.href)
