@@ -10,7 +10,6 @@ mixin link(link)
 					<strong>Hero: </strong> 
 					each cat in link.tags
 						a(href='/links/' + cat.key)= cat.name
-					br
 					if link.map
 						br
 						<strong>Map: </strong>
