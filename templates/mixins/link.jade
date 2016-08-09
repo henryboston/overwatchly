@@ -8,12 +8,13 @@ mixin link(link)
 			.post-summary
 				.post-content-brief(itemprop='description')
 					<strong>Hero: </strong> 
-					each cat, index in link.tags
-						if index == 0
-							a(href='/vods/' + cat.key)= cat.name
-							<br />
-							<strong>Map: </strong>
-							a(href='/vods/' + cat.map)=cat.map
+					each cat in link.tags
+						a(href='/links/' + cat.key)= cat.name
+					br
+					if link.map
+						br
+						<strong>Map: </strong>
+						=link.map
 					if link.skill
 						br
 						<strong>Skill: </strong>
