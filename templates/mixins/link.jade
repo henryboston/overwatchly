@@ -1,11 +1,11 @@
 mixin link(link)
 	.col-sm-4
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
-			div.poviFrame
-				iframe(src=link.href, allowfullscreen, frameborder='0')
-			.post-summary
-				h5(itemprop='name').post-title
+			h5(itemprop='name' style='padding-top: 15px; padding-left: 10px').post-title
 					a(href='/vods/vod/' + link.slug, itemprop='url')=link.label
+			div.poviFrame
+				a.youtube(href=link.href)
+			.post-summary
 				.post-content-brief(itemprop='description')
 					<strong>Hero: </strong> 
 					each cat, index in link.tags
