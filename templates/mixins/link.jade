@@ -8,8 +8,15 @@ mixin link(link)
 			.post-summary
 				.post-content-brief(itemprop='description')
 					<strong>Hero: </strong> 
-					each cat in link.tags
-						a(href='/links/' + cat.key)= cat.name
+					each cat, index in link.tags
+						if link.tags.length > 1
+							if index == link.tags.length - 1
+								a(href='/vods/' + cat.key)= cat.name
+							else
+								a(href='/vods/' + cat.key)= cat.name
+								|, 
+						else
+							a(href='/vods/' + cat.key)= cat.name
 					if link.map
 						br
 						<strong>Map: </strong>
