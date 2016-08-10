@@ -210,7 +210,8 @@ $(function() {
 
 	//vods section
 	$('.poviFrame').on('click', function() {
-		var href = $(".youtube").attr('href');
+		var href = $(this).children('.youtube').attr('href');
+		//var href = $(".youtube").attr('href');
 		$(this).addClass('hidePlay');
 	    var id = getYoutubeID(href);
 	    var iframeSrc = "//www.youtube.com/embed/"+id+"?autoplay=1";

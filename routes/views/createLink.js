@@ -35,7 +35,7 @@ exports = module.exports = function(req, res) {
 				locals.validationErrors = err.errors;
 			} else {
 				req.flash('success', 'Your link has been added' + ((newLink.state == 'draft') ? ' and will appear on the site once it\'s been approved' : '') + '.');
-				return res.redirect('/links');
+				return res.redirect('/vods');
 			}
 			next();
 		});
