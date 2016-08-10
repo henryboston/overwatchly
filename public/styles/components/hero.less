@@ -6,13 +6,14 @@
 **/
 
 // General styles
-@hero-intro-height-sm: 540px;
-@hero-intro-height-xs: 420px;
+@hero-intro-height-md: 420px;
+@hero-intro-height-sm: 240px;
+@hero-intro-height-xs: 240px;
 #hero {
 	position: relative;
 	.hero-intro {
 		position: relative;
-		height: @hero-intro-height-sm;
+		height: @hero-intro-height-md;
 		color: #FFF;
 		text-align: center;
 		margin-top: -(@navbar-height + 10) * 2;
@@ -92,7 +93,7 @@
 	//- Mobile
 	@media (max-width: @screen-xs-max) {
 		.hero-intro {
-			//height: @hero-intro-height-xs;
+			height: @hero-intro-height-xs;
 			.subtitle {
 				font-size: @font-size-base * 1.2;
 			}

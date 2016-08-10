@@ -24,7 +24,7 @@ block intro
 				.hero-intro-content
 					div(class= 'col-md-12 featured')(itemscope itemtype="http://schema.org/Blog")
 						.container
-							if data.featured.length
+							if data.main.length
 								//.post-cards.row(itemscope itemtype="http://schema.org/Blog")
 								each main in data.main
 									+main(main)

@@ -2,7 +2,14 @@ mixin featured(featured)
 	//.main.col-md-3.col-sm-4.col-xs-4
 	#featured.col-md-3.col-sm-3.col-sm-3
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").main-post
-			a(href='/overwatch/post/' + featured.slug).post-image: img(src=featured._.image.thumbnail(250,255), alt=featured.title).img-responsive
-			.main-info
-				h2(itemprop='name').main-title
-					a(href='/overwatch/post/' + featured.slug, itemprop='url')=featured.title
+			if featured.href
+				div.poviFrame
+					a.youtube(href=featured.href)
+				.main-info
+					h2(itemprop='name').main-title
+						a(href='/overwatch/post/' + featured.slug, itemprop='url')=featured.title
+			if featured.innerLink
+				a(href=featured.innerLink).post-image: img(src=featured._.image.scale(), alt=featured.title,,data-src=featured._.image.src).img-responsive
+				.main-info
+					h2(itemprop='name').main-title
+						a(href=featured.innerLink, itemprop='url')=featured.title

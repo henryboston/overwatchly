@@ -27,7 +27,9 @@ Post.add({
 		title: { type: String},
 		description: { type: String}
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true }
+	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	href: { type: Types.Url, required: false},
+	innerLink: { type: Types.Url, required: false}
 });
 
 /**

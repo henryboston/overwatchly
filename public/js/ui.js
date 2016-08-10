@@ -225,7 +225,7 @@ $(function() {
 	$('a.youtube').each(function() {
 	    var id = getYoutubeID( this.href );
 	    this.id = id;
-	    var thumb_url = "http://img.youtube.com/vi/"+id+"/maxresdefault.jpg";
+	    var thumb_url = "http://img.youtube.com/vi/"+id+"/hqdefault.jpg";
 	    $('<img class="img-responsive povImg" src="'+thumb_url+'" />').appendTo($(this.parentNode));
 	    
 	});

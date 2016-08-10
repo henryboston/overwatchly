@@ -163,10 +163,9 @@
 //POV
 .poviFrame {
 	position: relative;
-	padding-bottom: 65.25%;
-	padding-top: 30px;
+	padding-bottom: 75%;
 	height: 0;
-	overflow: auto; 
+	overflow: hidden; 
 	-webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY 
 	border: 0px;
 	background: black;
@@ -181,6 +180,9 @@
 .povImg {
 	position: absolute;
 	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
 }
 .poviFrame:after {
     content: "";
