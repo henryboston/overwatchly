@@ -142,6 +142,11 @@ block content
 						span.mini-icon(style='background-image:url("/images/overwatch/heroes/mini/zenyatta.png")')
 						span.mini-info
 							span.mini-name Zenyatta
+				.col-md-1.col-sm-2.col-xs-3.heroes-item
+					a(href='/vods').heroes-mini-item
+						span.mini-icon(style='background-image:url("/images/logosq.png"); background-color:white;')
+						span.mini-info
+							span.mini-name eSports
 		.row
 			.col-sm-12
 				if filters.tag && !data.tag
@@ -156,15 +161,16 @@ block content
 							h3.text-muted No links in the tag #{data.tag.name}.
 						else
 							h3.text-muted There are no VODs yet.
-		|	
-		| <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		| <!-- overwatchly post -->
-		| <ins class="adsbygoogle"
-		|      style="display:block"
-		|      data-ad-client="ca-pub-9309581458025353"
-		|      data-ad-slot="8680912020"
-		|      data-ad-format="auto"></ins>
-		| <script>
-		| (adsbygoogle = window.adsbygoogle || []).push({});
-		| </script>
-		| 
+		.row
+			|	
+			| <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			| <!-- overwatchly post -->
+			| <ins class="adsbygoogle"
+			|      style="display:block"
+			|      data-ad-client="ca-pub-9309581458025353"
+			|      data-ad-slot="8680912020"
+			|      data-ad-format="auto"></ins>
+			| <script>
+			| (adsbygoogle = window.adsbygoogle || []).push({});
+			| </script>
+			| 

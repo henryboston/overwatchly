@@ -118,7 +118,7 @@ body {
 .site-footer {
 	background-color: darken(@body-bg, 3.5%);
 	color: @gray-light;
-	padding: 3em 0 0;
+	padding: 1em 0 0;
 	font-size: @font-size-base * 1.1;
 	position: relative;
 
@@ -137,8 +137,8 @@ body {
 	
 }
 .footer-copyright {
-	margin-top: 2em;
-	padding: 2em @page-padding;
+	margin-top: .5em;
+	padding: .5em @page-padding;
 	border-top: 1px solid fade(black, 10%);
 	text-align: center;
 }
@@ -158,11 +158,9 @@ body {
 }
 
 .site-footer.site-footer--sticky {
-	position: absolute;
 	bottom: 0;
 	display: block;
 	width: 100%;
-	height: @footerHeight;
 	@media (max-width: @screen-xs-max) {
 		position: relative;
 		bottom: auto;

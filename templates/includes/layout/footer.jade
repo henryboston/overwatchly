@@ -1,33 +1,30 @@
 //- SITE FOOTER
-//footer.site-footer.site-footer--sticky: .container
+footer.site-footer.site-footer--sticky: .container
 	.row
 		.col-sm-4
 			h5.footer-heading About
-			p Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript. 
-			ul.list-inline
+			p Overwatchly provides quality content about competitive Overwatch. We create meta analysis reports using data, in-depth videos, written guides and strategy articles to help improve your skill rank!
+			//ul.list-inline
 				li: a(href='/about') More about SydJS
 				li: a(href='mailto:craig.sharkie+sydjs@gmail.com') Contact us
 
 		.col-sm-8
 			.row
 				.col-xs-4
-					h5.footer-heading Members
+					h5.footer-heading Articles
+					ul
+						li: a(href='/overwatch') Overwatch
+						li: a(href='/overwatch/strategy') Strategy
+						li: a(href='/overwatch/analysis') Analysis
+				.col-xs-4
+					h5.footer-heading Videos
+					ul
+						li: a(href='/vods') POV Pro VODs
+						li: a(href='https://www.youtube.com/channel/UC1dg28xtaEbuAuPTz4y3zzw' target='_blank') YouTube
+				.col-xs-4
+					h5.footer-heading Coaching
 					ul
 						li: a(href='/members') Members
-						li: a(href='/mentoring') Mentoring
-						li: a(href='/members/mentors') Mentors
-						if !user
-							li: a(href='/join').js-auth-trigger Become a Member
-				.col-xs-4
-					h5.footer-heading Resources
-					ul
-						li: a(href='/organisations') Organisations
-						li: a(href='/links') Links
-						li: a(href='/blog') Blog
-						li: a(href='/showbag') Showbag
-				.col-xs-4
-					h5.footer-heading Sponsors
-					ul: each sponsor in sponsors
-						li: a(href='/organisations#' + sponsor.id)= sponsor.name
+						li Coaching (coming soon)
 	.row.footer-copyright
-		p Copyright &copy; 2016 SydJS. Powered by <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a>.
+		p &copy; 2016 Overwatchly. Overwatch &copy; 2016 Blizzard Entertainment.
