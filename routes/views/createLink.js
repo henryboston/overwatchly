@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	locals.section = 'me';
-	locals.page.title = 'Add a link - SydJS';
+	locals.page.title = 'Add a VOD - Overwatchly';
 	
 	view.on('post', { action: 'add-link' }, function(next) {
 
@@ -23,18 +23,18 @@ exports = module.exports = function(req, res) {
 		
 		// automatically pubish posts by admin users
 		if (locals.user.isAdmin) {
-			newLink.state = 'published';
+			newLink.state = 'draft';
 		}
 		
 		updater.process(req.body, {
 			flashErrors: true,
 			logErrors: true,
-			fields: 'href,label,description'
+			fields: 'href,label,skill,map,description,player'
 		}, function(err) {
 			if (err) {
 				locals.validationErrors = err.errors;
 			} else {
-				req.flash('success', 'Your link has been added' + ((newLink.state == 'draft') ? ' and will appear on the site once it\'s been approved' : '') + '.');
+				req.flash('success', 'Your video has been added' + ((newLink.state == 'draft') ? ' and will appear on the site once it\'s been approved' : '') + '.');
 				return res.redirect('/vods');
 			}
 			next();

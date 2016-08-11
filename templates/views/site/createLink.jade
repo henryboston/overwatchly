@@ -14,13 +14,38 @@ block content
 						h1 Submit a Video
 						input(type='text', id='link-url', name='href', placeholder='Add your YouTube URL').input.input-md.input-faded
 					.form-group
-						input(type='text', id='link-label', name='label', placeholder='Title').input.input-xl.input-faded
-					
-					
+						input(type='text', id='link-label', name='label', placeholder='Title').input.input-md.input-faded
+					//map
+					//.form-group
+						select(id='link-tags', name='tags').input.input-md.input-faded.form-control
+							option(selected) Select a hero
+							option(McCree) McCree
+							option(zarya) Zarya
+					//skill
+					.form-group
+						input(type='text', id='link-skill', name='skill', placeholder='Skill Level').input.input-md.input-faded
+					//map
+					.form-group
+						select(id='link-map', name='map').input.input-md.input-faded.form-control
+							option(disabled selected) Select a map
+							option(Hanamura) Hanamura
+							option(Temple of Anubis) Temple of Anubis
+							option(Volskaya) Volskaya
+							option(Dorado) Dorado
+							option(Route 66) Route 66
+							option(Watchpoint: Gibraltar) Watchpoint: Gibraltar
+							option(Hollywood) Hollywood
+							option(King’s Row) King’s Row
+							option(Numbani) Numbani
+							option(Ilios) Ilios
+							option(Lijang Tower) Lijang Tower
+							option(Nepal) Nepal
 					//- Content
 					.form-group
-						label Description
+						label Hero & Description
 						textarea(name='description', class='wysiwyg').input.input-faded
+					.form-group
+						input(type='text', id='link-player', name='player', placeholder='Player').input.input-md.input-faded
 					
 					
 					//- Submit
@@ -37,7 +62,7 @@ block js
 			tinymce.init({
 				selector: 'textarea.wysiwyg',
 				menubar: false,
-				height: 400,
+				height: 200,
 				plugins: [ 'code', 'link' ],
 				toolbar: 'bold italic | alignleft aligncenter alignright | bullist numlist | outdent indent | link | code',
 				skin: 'keystone'
