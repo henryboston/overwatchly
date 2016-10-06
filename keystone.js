@@ -104,7 +104,7 @@ keystone.set('nav', {
 
 // app.js
 var discordbot = require('simple-discord-bot'),
-    auth = require('./auth.json');
+    authe = require('./auth.json');
  
 var subclubnum = 0;
 
@@ -255,6 +255,6 @@ function faq (message) {
  
 var bot = new discordbot({ commands: commands });
  
-bot.connect(auth);
+bot.connect(authe);
 
 keystone.start();
