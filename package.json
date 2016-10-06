@@ -37,7 +37,8 @@
     "react-dom": "0.14.8",
     "request": "2.69.0",
     "store-prototype": "1.1.1",
-    "superagent": "1.8.3"
+    "superagent": "1.8.3",
+    "simple-discord-bot": "0.4.5"
   },
   "engines": {
     "node": "~4.2.0",
