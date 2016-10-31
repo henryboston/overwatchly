@@ -32,21 +32,24 @@ block content
 										a(href='https://github.com/' + githubUsername, target='_blank', data-toggle='tooltip', data-title=githubUsername, data-placement='top').member__account.member__account--github.btn.btn-default
 											span.entypo-social.entypo-github
 											=githubUsername
-							if member.website
-								a(href=member.website, target='_blank') Profile Link
-								p 
-							if member.bio.html
-								!= member.bio.html
-							if member.mentoring.available
-								b I am available to provide coaching
-								if member.mentoring.free
-									| for free.
-								if member.mentoring.paid
-									|  for compensation.
+							if member.battletag
 								p
-								if member.mentoring.have
-									| For the following heroes: 
-									=member.mentoring.have
+									strong Battletag: 
+									!=member.battletag
+							if member.region
+								p
+									strong Region: 
+									!=member.region
+							if member.bio.html
+								p
+									!= member.bio.html
+							if member.mentoring.available
+								p
+									b I am available to provide coaching
+									if member.mentoring.have
+										p
+										| For the following heroes: 
+										=member.mentoring.have
 				//if member.talks && member.talks.length
 					.member-section.member__additional-info
 						h5.text-caps Talks

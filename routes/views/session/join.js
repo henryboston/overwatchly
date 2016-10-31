@@ -48,12 +48,12 @@ exports = module.exports = function(req, res) {
 				var userData = {
 					name: {
 						//first: req.body.firstname,
-						last: req.body.lastname,
+						last: req.body.lastname
 					},
 					email: req.body.email,
-					password: req.body.password,
+					password: req.body.password
 					
-					website: req.body.website
+					//website: req.body.website
 				};
 				
 				var User = keystone.list('User').model,

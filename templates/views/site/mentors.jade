@@ -2,7 +2,7 @@ extends ../../layouts/default
 
 block intro
 	.page-intro
-		h1 Mentors
+		h1 Coaching
 		p.lead The mentors who are part of SydJS. Should you be here? Join us!
 
 block content
@@ -13,11 +13,12 @@ block content
 				thead.panel-heading
 					tr
 						th Name
-						th Have
-						th Want
+						th BattleTag
+						th Heroes
+						th Region
+						th VOD Review
 						th.hidden-xs Free
 						th.hidden-xs Paid
-						th.hidden-xs Swap
 				tbody
 					each member in members
 						tr
@@ -25,10 +26,11 @@ block content
 								a(href=member.url).media
 									.pull-left: img(src=member.photo.exists ? member._.photo.thumbnail(80,80) : member.avatarUrl || '/images/avatar.png', width=40, height=40, alt=member.name.ful).img-responsive.img-circle
 									.media-body= member.name.full
-							td= member.mentoring.have
-							td= member.mentoring.want
+							td=member.battletag
+							td=member.mentoring.have
+							td=member.region
+							td.hidden-xs!= member.mentoring.vod ? '<span class="entypo entypo-check"></span>' : null
 							td.hidden-xs!= member.mentoring.free ? '<span class="entypo entypo-check"></span>' : null
 							td.hidden-xs!= member.mentoring.paid ? '<span class="entypo entypo-check"></span>' : null
-							td.hidden-xs!= member.mentoring.swap ? '<span class="entypo entypo-check"></span>' : null
 		else
 			h3.text-muted There are no mentors yet.

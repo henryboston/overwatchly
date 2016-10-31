@@ -31,8 +31,8 @@ exports = module.exports = function(req, res) {
 	
 		req.user.getUpdateHandler(req).process(req.body, {
 			fields: 'name, email, notifications.meetups, notifications.posts,' + 
-			'website, isPublic, bio, photo,' + 
-			'mentoring.available, mentoring.free, mentoring.paid, mentoring.swap, mentoring.have, mentoring.want',
+			'website, isPublic, bio, photo, battletag, region,' + 
+			'mentoring.available, mentoring.free, mentoring.paid, mentoring.swap, mentoring.have, mentoring.want, mentoring.vod',
 			flashErrors: true
 		}, function(err) {
 		

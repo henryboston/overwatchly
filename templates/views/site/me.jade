@@ -118,8 +118,16 @@ block content
 							input(type='checkbox', name='isPublic', value='true', checked=user.isPublic ? 'true' : null)
 							|  Show my profile on the Overwatchly website
 				.form-group
-					label.col-sm-2.control-label Profile Link
-					.col-sm-10: input(type='text', name='website', placeholder='MasterOverwatch or Overbuff Profile Link' value=user.website).form-control
+					label.col-sm-2.control-label Battletag
+					.col-sm-10: input(type='text', name='battletag', placeholder='Battletag' value=user.battletag).form-control
+				.form-group
+					label.col-sm-2.control-label Region
+					.col-sm-10: select(id='region', name='region', value=user.region).form-control
+						option(disabled selected) Select a region
+						option(NA) NA
+						option(EU) EU
+						option(Oceania) Oceania
+						option(Asia) Asia
 				.form-group
 					label.col-sm-2.control-label Info
 						br
@@ -151,6 +159,9 @@ block content
 							.checkbox: label
 								input(type='checkbox', name='mentoring.paid', value='true', checked=user.mentoring.paid)
 								|  For Payment
+							.checkbox: label
+								input(type='checkbox', name='mentoring.vod', value='true', checked=user.mentoring.vod)
+								|  Review VODs?
 					.form-group
 						label.col-sm-2.control-label Heroes
 						.col-sm-10

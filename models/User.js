@@ -34,6 +34,8 @@ User.add({
 	photo: { type: Types.CloudinaryImage },
 	github: { type: String, width: 'short' },
 	twitter: { type: String, width: 'short' },
+	battletag: { type: String, required: true, initial: true},
+	region: { type: Types.Select, options: 'NA, EU, Oceania, Asia' },
 	website: { type: Types.Url },
 	bio: { type: Types.Markdown },
 	gravatar: { type: String, noedit: true }
@@ -49,7 +51,8 @@ User.add({
 		paid: { type: Boolean, label: 'For Payment', dependsOn: deps.mentoring },
 		swap: { type: Boolean, label: 'For Swap', dependsOn: deps.mentoring },
 		have: { type: String, label: 'Has...', dependsOn: deps.mentoring },
-		want: { type: String, label: 'Wants...', dependsOn: deps.mentoring }
+		want: { type: String, label: 'Wants...', dependsOn: deps.mentoring },
+		vod: { type: String, label: 'Review VODs?', dependsOn: deps.mentoring }
 	}
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can Admin SydJS' },
