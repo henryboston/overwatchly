@@ -15,9 +15,10 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Home',		key: 'home',		href: '/' },
 		//{ label: 'About',		key: 'about',		href: '/about' },
 		{ label: 'VOD',		key: 'vods',		href: '/vods' },
+		{ label: 'Team Builder', key:'vods', href: '/teambuilder'},
 		{ label: 'Articles',		key: 'overwatch',		href: '/overwatch' },
 		{ label: 'Analysis',	key: 'analysis',		href: '/overwatch/analysis' },
-		{ label: 'Strategy',	key: 'strategy',		href: '/overwatch/strategy' }
+		{ label: 'Strategy',	key: 'strategy',		href: '/overwatch/strategy' },
 		//{ label: 'Showbag',		key: 'showbag',		href: '/showbag' }
 		//{ label: 'esports',		key: 'meetups',		href: '/meetups' }
 	];

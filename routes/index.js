@@ -95,6 +95,7 @@ exports = module.exports = function (app) {
 	app.all('/overwatch/post/:post', routes.views.post);
 	app.get('/about', routes.views.about);
 	app.get('/mentoring', routes.views.mentoring);
+	app.get('/teambuilder', routes.views.teambuilder);
 
 	app.get('/showbag', routes.views.showbag);
 
