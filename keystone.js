@@ -55,9 +55,8 @@ keystone.init({
 
 	'wysiwyg additional plugins': 'images',
 	'wysiwyg images': true,
-	'wysiwyg cloudinary images': true,
-  	'wysiwyg additional buttons': 'images',
-  	'wysiwyg additional plugins': 'paste',
+	'wysiwyg additional buttons': 'images',
+	'wysiwyg additional plugins': 'paste',
 	'wysiwyg additional options': {
 	 	'paste_data_images': true,
 	 	'extended_valid_elements':'script[language|type|src],style[type]',
